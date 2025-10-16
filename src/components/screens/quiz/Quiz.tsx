@@ -28,15 +28,10 @@ const Quiz: FC = () => {
 		setIsAnalyzing(false)
 	}
 
-	const handleContactMethodSelect = (data: {
-		name: string
-		email: string
-		phone: string
-	}) => {
+	const handleContactMethodSelect = (data: { name: string; phone: string }) => {
 		const finalAnswers = {
 			...answers,
 			name: data.name,
-			email: data.email,
 			phone: data.phone
 		}
 		console.log('Final quiz answers:', finalAnswers)
@@ -49,15 +44,15 @@ const Quiz: FC = () => {
 
 	if (isAnalyzing) {
 		return (
-			<Layout>
+			<Layout hiddenHeader>
 				<Analysis onComplete={handleAnalysisComplete} />
 			</Layout>
 		)
 	}
 
-	if (currentStep === 4) {
+	if (true) {
 		return (
-			<Layout>
+			<Layout hiddenHeader>
 				<ContactForm
 					onBack={handleBackFromContact}
 					onSubmit={handleContactMethodSelect}
@@ -67,7 +62,7 @@ const Quiz: FC = () => {
 	}
 
 	return (
-		<Layout>
+		<Layout hiddenHeader>
 			<div className='bg-white py-12 md:py-20 relative'>
 				<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
 					{currentStep === 0 && (

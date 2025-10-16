@@ -30,7 +30,7 @@ const CheckboxOption: FC<CheckboxOptionProps> = ({
 		>
 			{imageUrl && (
 				<div
-					className={`h-48 bg-grey-200 flex-shrink-0 bg-cover bg-center relative flex items-center justify-center ${
+					className={`h-48 bg-grey-200 w-full flex-shrink-0 bg-cover bg-center relative flex items-center justify-center ${
 						blurImage ? 'blur-[3px]' : ''
 					}`}
 					style={{
@@ -40,7 +40,7 @@ const CheckboxOption: FC<CheckboxOptionProps> = ({
 					}}
 				/>
 			)}
-			<div className='p-4 bg-white flex-grow flex flex-row items-center justify-between'>
+			<div className='p-4 bg-white flex-grow w-full flex flex-row items-center justify-between'>
 				<p className='font-medium text-grey-400 text-sm'>{label}</p>
 				{!hideCheckbox && (
 					<div
