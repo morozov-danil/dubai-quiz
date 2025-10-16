@@ -6,18 +6,5 @@
 	"jsxSingleQuote": true,
 	"arrowParens": "avoid",
 	"semi": false,
-	"import/extensions": [".ts", ".tsx"],
-	"importOrder": [
-		"<THIRD_PARTY_MODULES>",
-		"^@/components/(.*)$",
-		"^@/shared/(.*)$",
-		"^@/services/(.*)$",
-		"^@/assets/(.*)$",
-		"^@/config/(.*)$",
-		"^@/(.*)$",
-		"^../(.*)",
-		"^./(.*)"
-	],
-	"importOrderSeparation": true,
-	"importOrderSortSpecifiers": true
+	"import/extensions": [".ts", ".tsx"]
 }
