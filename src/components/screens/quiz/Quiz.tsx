@@ -1,6 +1,6 @@
 import { FC, useState } from 'react'
 import { Layout } from '../../ui'
-import { Step1, Step2, Step3, Step4, Analysis, ContactForm } from './steps'
+import { Analysis, ContactForm, Step1, Step2, Step3, Step4 } from './steps'
 
 const Quiz: FC = () => {
 	const [currentStep, setCurrentStep] = useState(0)
@@ -50,7 +50,7 @@ const Quiz: FC = () => {
 		)
 	}
 
-	if (true) {
+	if (currentStep === 4) {
 		return (
 			<Layout hiddenHeader>
 				<ContactForm
