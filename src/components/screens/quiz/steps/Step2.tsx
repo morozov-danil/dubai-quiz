@@ -1,6 +1,6 @@
-import { FC, useState } from 'react'
+import { FC } from 'react'
 import { Button } from '../../../ui'
-import { CheckboxOption, CustomOption } from '../components'
+import { CheckboxOption } from '../components'
 
 interface Step2Props {
 	selectedRooms: string[]
@@ -35,11 +35,7 @@ const Step2: FC<Step2Props> = ({ selectedRooms, onRoomsChange, onNext }) => {
 			image: '/step-2/image.png'
 		}
 	]
-	const [customValue, setCustomValue] = useState('')
-
-	const isCustomSelected = selectedRooms.includes('custom')
-	const isValid =
-		selectedRooms.length > 0 && (!isCustomSelected || customValue.trim() !== '')
+	const isValid = selectedRooms.length > 0
 
 	const handleRoomToggle = (room: string) => {
 		onRoomsChange(
@@ -47,13 +43,6 @@ const Step2: FC<Step2Props> = ({ selectedRooms, onRoomsChange, onNext }) => {
 				? selectedRooms.filter(r => r !== room)
 				: [...selectedRooms, room]
 		)
-	}
-
-	const handleCustomChange = (value: string) => {
-		setCustomValue(value)
-		if (!selectedRooms.includes('custom')) {
-			onRoomsChange([...selectedRooms, 'custom'])
-		}
 	}
 
 	return (
@@ -84,15 +73,6 @@ const Step2: FC<Step2Props> = ({ selectedRooms, onRoomsChange, onNext }) => {
 								imageUrl={room.image}
 							/>
 						))}
-					</div>
-
-					<div className='mb-6'>
-						<CustomOption
-							value={customValue}
-							onValueChange={handleCustomChange}
-							isSelected={isCustomSelected}
-							placeholder='Сколько комнат?'
-						/>
 					</div>
 				</div>
 			</div>

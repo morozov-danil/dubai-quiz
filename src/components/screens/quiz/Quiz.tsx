@@ -38,10 +38,6 @@ const Quiz: FC = () => {
 		// Handle final submission
 	}
 
-	const handleBackFromContact = () => {
-		setCurrentStep(3)
-	}
-
 	if (isAnalyzing) {
 		return (
 			<Layout hiddenHeader>
@@ -53,10 +49,7 @@ const Quiz: FC = () => {
 	if (currentStep === 4) {
 		return (
 			<Layout hiddenHeader>
-				<ContactForm
-					onBack={handleBackFromContact}
-					onSubmit={handleContactMethodSelect}
-				/>
+				<ContactForm onSubmit={handleContactMethodSelect} />
 			</Layout>
 		)
 	}

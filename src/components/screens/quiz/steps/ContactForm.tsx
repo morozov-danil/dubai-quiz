@@ -1,11 +1,10 @@
 import { FC, useState } from 'react'
 
 interface ContactFormProps {
-	onBack: () => void
 	onSubmit: (data: { name: string; phone: string }) => void
 }
 
-const ContactForm: FC<ContactFormProps> = ({ onBack, onSubmit }) => {
+const ContactForm: FC<ContactFormProps> = ({ onSubmit }) => {
 	const [formData, setFormData] = useState({
 		name: '',
 		phone: ''
@@ -33,15 +32,18 @@ const ContactForm: FC<ContactFormProps> = ({ onBack, onSubmit }) => {
 	}
 
 	return (
-		<div className='bg-grey-100 min-h-screen flex items-center py-8 md:py-0 relative'>
+		<div
+			className='bg-grey-100 min-h-screen flex items-center py-8 md:py-0 relative bg-center bg-cover'
+			style={{ backgroundImage: `url(/form-bg.png)` }}
+		>
 			<div className='max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8'>
 				<div className='grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center relative z-10'>
 					<div className='rounded-3xl p-8 sm:p-10'>
-						<h2 className='text-3xl sm:text-4xl font-bold text-grey-400 mb-3'>
+						<h2 className='text-4xl font-bold text-grey-400 mb-3'>
 							Ваша подборка лучшей недвижимости Дубая готова
 						</h2>
 
-						<p className='text-grey-300 mb-8'>
+						<p className='text-grey-400 font-medium mb-8'>
 							Оставьте свои контактные данные и получите каталог с лучшими
 							предложениями на рынке недвижимости Дубая по вашим параметрам
 						</p>
@@ -71,21 +73,15 @@ const ContactForm: FC<ContactFormProps> = ({ onBack, onSubmit }) => {
 										type='checkbox'
 										checked={agreedToPrivacy}
 										onChange={e => setAgreedToPrivacy(e.target.checked)}
-										className='mt-1 w-5 h-5 rounded border-2 border-grey-300 bg-white cursor-pointer accent-blue'
+										className='w-5 h-5 rounded border-2 border-grey-300 bg-white cursor-pointer accent-blue'
 									/>
-									<span className='text-sm text-grey-300 group-hover:text-grey-400 transition-colors'>
+									<span className='text-sm text-white font-medium transition-colors'>
 										Предоставляя свою личную информацию, я согласился с{' '}
-										<a
-											href='#'
-											className='text-blue font-medium hover:underline'
-										>
+										<a href='#' className='font-medium hover:underline'>
 											Политикой конфиденциальности
 										</a>{' '}
 										Metropolitan Group, законами о защите данных и{' '}
-										<a
-											href='#'
-											className='text-blue font-medium hover:underline'
-										>
+										<a href='#' className='tfont-medium hover:underline'>
 											Условиями пользования
 										</a>
 										.
